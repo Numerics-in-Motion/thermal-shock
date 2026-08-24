@@ -1,0 +1,113 @@
+{
+ "held_fixed": {
+  "thickness_m": 0.01,
+  "cells": 120,
+  "bath_C": 20.0,
+  "h_primary": 3000.0,
+  "dT_ref": 100.0,
+  "cfl": 0.4
+ },
+ "materials": {
+  "glass": {
+   "label": "soda-lime glass",
+   "E": 70000000000.0,
+   "nu": 0.22,
+   "alpha": 9e-06,
+   "k": 1.0,
+   "rho": 2500.0,
+   "cp": 840.0,
+   "sigma_f": 50000000.0,
+   "t_max": 600.0,
+   "note": "annealed soda-lime float glass; sigma_f is a design tensile strength, flaw-limited. t_max is below the ~730 C softening point, where it stops being a plate"
+  },
+  "steel": {
+   "label": "mild steel",
+   "E": 200000000000.0,
+   "nu": 0.3,
+   "alpha": 1.2e-05,
+   "k": 50.0,
+   "rho": 7850.0,
+   "cp": 490.0,
+   "sigma_f": 250000000.0,
+   "t_max": 1400.0,
+   "note": "S275-class structural steel; sigma_f is the yield stress, so 'cracks' means 'first yields'. t_max is below the ~1500 C melting range"
+  },
+  "alumina": {
+   "label": "alumina ceramic",
+   "E": 370000000000.0,
+   "nu": 0.22,
+   "alpha": 8e-06,
+   "k": 30.0,
+   "rho": 3900.0,
+   "cp": 880.0,
+   "sigma_f": 300000000.0,
+   "t_max": 1700.0,
+   "note": "99% dense alumina; sigma_f is a flexural strength. t_max is a conservative service limit below the ~2050 C melting point"
+  },
+  "aluminium": {
+   "label": "aluminium",
+   "E": 70000000000.0,
+   "nu": 0.33,
+   "alpha": 2.3e-05,
+   "k": 205.0,
+   "rho": 2700.0,
+   "cp": 900.0,
+   "sigma_f": 90000000.0,
+   "t_max": 640.0,
+   "note": "1050-class commercially pure aluminium; sigma_f is the yield stress. t_max is just below the 660 C melting point"
+  }
+ },
+ "primary": {
+  "glass": {
+   "dT_crit": 95.25039754321641,
+   "reachable": true,
+   "reach": 580.0,
+   "biot": 15.0,
+   "R": 61.904761904761905,
+   "R_prime": 61.904761904761905
+  },
+  "steel": {
+   "dT_crit": 891.7773690812385,
+   "reachable": true,
+   "reach": 1380.0,
+   "biot": 0.3,
+   "R": 72.91666666666667,
+   "R_prime": 3645.8333333333335
+  },
+  "alumina": {
+   "dT_crit": 636.4287716102311,
+   "reachable": true,
+   "reach": 1680.0,
+   "biot": 0.5,
+   "R": 79.05405405405405,
+   "R_prime": 2371.6216216216217
+  },
+  "aluminium": {
+   "dT_crit": 1648.3206547711522,
+   "reachable": false,
+   "reach": 620.0,
+   "biot": 0.07317073170731707,
+   "R": 37.45341614906832,
+   "R_prime": 7677.950310559005
+  }
+ },
+ "ranking": [
+  [
+   "aluminium"
+  ],
+  [
+   "steel"
+  ],
+  [
+   "alumina"
+  ],
+  [
+   "glass"
+  ]
+ ],
+ "unreachable": [
+  "aluminium"
+ ],
+ "sweep": null,
+ "runtime_s": 127.9
+}
